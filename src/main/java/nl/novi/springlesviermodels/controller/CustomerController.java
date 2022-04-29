@@ -25,12 +25,12 @@ public class CustomerController {
     @PostMapping
     ResponseEntity<CustomerCreatedDto> createCustomer(@RequestBody CreateCustomerDto createCustomerDto){
        final CustomerCreatedDto createdCustomer =  customerService.createCustomer(createCustomerDto);
-//       return ResponseEntity.ok(createdCustomer);
+       return ResponseEntity.ok(createdCustomer);
 
-       final URI location = URI.create("/customers" + createdCustomer.getId());
-       return ResponseEntity
-               .created(location)
-               .body(createdCustomer);
+//       final URI location = URI.create("/customers" + createdCustomer.getId());
+//       return ResponseEntity
+//               .created(location)
+//               .body(createdCustomer);
 
 
     }
